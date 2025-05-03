@@ -1,0 +1,80 @@
+server:
+  advertiseIP: 127.0.0.1
+  advertisePort: 8004
+  listenIP: 0.0.0.0
+  port: 8002
+  host: foo
+  tls:
+    caCert: foo
+    cert: foo
+    key: foo
+  cacheDir: foo
+  logDir: foo
+  pluginDir: foo
+  dataDir: foo
+  logMaxSize: 512
+  logMaxAge: 5
+  logMaxBackups: 3
+
+scheduler:
+  algorithm: default
+  backToSourceCount: 3
+  retryBackToSourceLimit: 2
+  retryLimit: 10
+  retryInterval: 10s
+  gc:
+    pieceDownloadTimeout: 5s
+    peerGCInterval: 10s
+    peerTTL: 60s
+    taskGCInterval: 30s
+    hostGCInterval: 1m
+    hostTTL: 1m
+
+database:
+  redis:
+    addrs: [ "foo", "bar" ]
+    masterName: "baz"
+    host: 127.0.0.1
+    port: 6379
+    password: foo
+    brokerDB: 1
+    backendDB: 2
+
+dynConfig:
+  refreshInterval: 10s
+
+host:
+  idc: foo
+  location: baz
+
+manager:
+  addr: 127.0.0.1:65003
+  tls:
+    caCert: foo
+    cert: foo
+    key: foo
+  schedulerClusterID: 1
+  keepAlive:
+    interval: 5s
+
+seedPeer:
+  enable: true
+  tls:
+    caCert: foo
+    cert: foo
+    key: foo
+  taskDownloadTimeout: 12h
+
+job:
+  enable: true
+  globalWorkerNum: 1
+  schedulerWorkerNum: 1
+  localWorkerNum: 5
+
+metrics:
+  enable: false
+  addr: ":8000"
+  enableHost: true
+
+network:
+  enableIPv6: true
